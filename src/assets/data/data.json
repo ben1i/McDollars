@@ -1,0 +1,131 @@
+[
+    {
+        "year": 1970,
+        "president": "Richard Nixon (Republican)",
+        "bigmacindex": 0.55,
+        "inflation": 23,
+        "medianincome": 4.1,
+        "gdp/habitants": 5234.30,
+        "unemployment": 3.50,
+        "gini": 36.60,
+        "health spending": 2.32   
+    },
+
+    {
+        "year": 1972,
+        "president": "Richard Nixon (Republican)",
+        "bigmacindex": 0.60,
+        "inflation": 2.86,
+        "medianincome": 4.7,
+        "gdp/habitants": 6094,
+        "unemployment": 6,
+        "gini": 36.70,
+        "health spending": 2.49
+    },
+
+    {
+        "year": 1974,
+        "president": "Richard Nixon (Republican)",
+        "bigmacindex": 0.65,
+        "inflation": 24,
+        "medianincome": 5.7,
+        "gdp/habitants": 7225.70,
+        "unemployment": 4.90,
+        "gini": 35.50,
+        "health spending": 2.77
+    },
+
+    {
+        "year": 1976,
+        "president": "Gerald Ford (Republican)",
+        "bigmacindex": 0.70,
+        "inflation": 0.17,
+        "medianincome": 6.7,
+        "obesityrate": 47,
+        "gdp/habitants": 8592.30,
+        "unemployment": 8.20,
+        "gini": 35.60,
+        "health spending": 3.05
+    },
+
+    {
+        "year": 1978,
+        "president": "Jimmy Carter (Democrat)",
+        "bigmacindex": 0.75,
+        "inflation": 8.34,
+        "medianincome": 8,
+        "obesityrate": 47,
+        "gdp/habitants": 10564.90,
+        "unemployment": 6.40,
+        "gini": 34.80,
+        "health spending": 3.14
+    },
+
+    {
+        "year": 1980,
+        "president": "Jimmy Carter (Democrat)",
+        "bigmacindex": 1.05,
+        "inflation": 17,
+        "medianincome": 9.8,
+        "obesityrate": 48,
+        "gdp/habitants": 12574.80,
+        "unemployment": 6,
+        "gini": 34.70,
+        "health spending": 3.46,
+        "lettuceprice": 0.45,
+        "breadprice": 0.501
+    },
+
+    {
+        "year": 1982,
+        "president": "Ronald Reagan (Republican)",
+        "bigmacindex": 1.15,
+        "inflation": -0.93,
+        "medianincome": 11.8,
+        "obesityrate": 49,
+        "gdp/habitants": 14433.80,
+        "unemployment": 8.50,
+        "gini": 36.70,
+        "health spending": 3.82,
+        "lettuceprice": 0.57,
+        "breadprice": 0.537
+    },
+
+    {
+        "year": 1984,
+        "president": "Ronald Reagan (Republican)",
+        "bigmacindex": 1.35,
+        "inflation": 3.80,
+        "medianincome": 13.5,
+        "obesityrate": 50,
+        "gdp/habitants": 17121.20,
+        "unemployment": 8.30,
+        "gini": 37.30,
+        "health spending": 3.79,
+        "beefprice": 1.29,
+        "lettuceprice": 0.51,
+        "cheddarprice": 3.048,
+        "breadprice": 0.543
+    },
+
+    {
+        "year": 1986,
+        "president": "Ronald Reagan (Republican)",
+        "bigmacindex": 1.60,
+        "inflation": 2.24,
+        "medianincome": 15.3,
+        "obesityrate": 52,
+        "gdp/habitants": 19071.20,
+        "unemployment": 7,
+        "gini": 37.60,
+        "health spending": 3.97,
+        "beefprice": 1.275,
+        "lettuceprice": 0.53,
+        "cheddarprice": 3.061,
+        "breadprice": 0.566
+    },
+
+    {
+        
+    }
+]
