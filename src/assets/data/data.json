@@ -3,77 +3,82 @@
         "year": 1970,
         "president": "Richard Nixon (Republican)",
         "bigmacindex": 0.55,
-        "bigmacindexinflation": 4.44,
         "inflation": 23,
         "medianincome": 4.1,
-        "medianincomeinflation" : 33.129,
         "gdp/habitants": 5234.30,
-        "gdp/habitantsinflation": 42294.69,
         "unemployment": 3.50,
         "gini": 36.60,
-        "health spending": 2.32   
+        "health spending": 2.32,
+
+        "bigmacindexinflation": 4.44,
+        "medianincomeinflation" : 33.129,
+        "gdp/habitantsinflation": 42294.69
     },
 
     {
         "year": 1972,
         "president": "Richard Nixon (Republican)",
         "bigmacindex": 0.60,
-        "bigmacindexinflation" : 4.50,
         "inflation": 2.86,
         "medianincome": 4.7,
-        "medianincomeinflation" : 35.251,
         "gdp/habitants": 6094,
-        "gdp/habitantsinflation": 45707.25,
         "unemployment": 6,
         "gini": 36.70,
-        "health spending": 2.49
+        "health spending": 2.49,
+
+        "bigmacindexinflation" : 4.50,
+        "medianincomeinflation" : 35.251,
+        "gdp/habitantsinflation": 45707.25
     },
 
     {
         "year": 1974,
         "president": "Richard Nixon (Republican)",
         "bigmacindex": 0.65,
-        "bigmacindexinflation": 4.13,
         "inflation": 24,
         "medianincome": 5.7,
-        "medianincomeinflation": 36.248,
         "gdp/habitants": 7225.70,
-        "gdp/habitantsinflation": 45950.68,
         "unemployment": 4.90,
         "gini": 35.50,
-        "health spending": 2.77
+        "health spending": 2.77,
+
+        "bigmacindexinflation": 4.13,
+        "medianincomeinflation": 36.248,
+        "gdp/habitantsinflation": 45950.68
     },
 
     {
         "year": 1976,
         "president": "Gerald Ford (Republican)",
         "bigmacindex": 0.70,
-        "bigmacindexinflation": 3.86,
         "inflation": 0.17,
         "medianincome": 6.7,
-        "medianincomeinflation": 36.916,
         "obesityrate": 47,
         "gdp/habitants": 8592.30,
-        "gdp/habitantsinflation" : 47343.04,
         "unemployment": 8.20,
         "gini": 35.60,
-        "health spending": 3.05
+        "health spending": 3.05,
+
+        "bigmacindexinflation": 3.86,
+        "medianincomeinflation": 36.916,
+        "gdp/habitantsinflation" : 47343.04
     },
 
     {
         "year": 1978,
         "president": "Jimmy Carter (Democrat)",
         "bigmacindex": 0.75,
-        "bigmacindexinflation": 3.61,
         "inflation": 8.34,
         "medianincome": 8,
-        "medianincomeinflation" : 38.468,
         "obesityrate": 47,
         "gdp/habitants": 10564.90,
-        "gdp/habitantsinflation": 50801.52,
         "unemployment": 6.40,
         "gini": 34.80,
-        "health spending": 3.14
+        "health spending": 3.14,
+
+        "bigmacindexinflation": 3.61,
+        "medianincomeinflation" : 38.468,
+        "gdp/habitantsinflation": 50801.52
     },
 
     {
@@ -88,7 +93,11 @@
         "gini": 34.70,
         "health spending": 3.46,
         "lettuceprice": 0.45,
-        "breadprice": 0.501
+        "breadprice": 0.501,
+
+        "bigmacindexinflation": 4,
+        "medianincomeinflation": 37.287,
+        "gdp/habitantsinflation": 47844.59
     },
 
     {
@@ -400,7 +409,26 @@
         "beefprice": 3.978,
         "lettuceprice": 1.06,
         "cheddarprice": 5.411,
-        "breadprice": 1.425
+        "breadprice": 1.425,
+
+        "bigmacindexinflation": 4.29,
+        "medianincomeinflation": 48.5,
+        "gdp/habitantsinflation": 58206.60,
+        "1bigmacbeefprice" : 0.796,
+        "1bigmaclettuceprice": 0.066,
+        "1bigmaccheddarprice": 0.169,
+        "1bigmacbreadprice": 0.033,
+        "1bigmacprice": 1.17,
+        "1bigmacpriceinflation": 1.55,
+
+        "bigmacindexeuro": 4.05,
+        "bigmacindexswitzerland": 6.50,
+        "bigmacindexsouthafrica": 1.79,
+        "bigmacindexaustralia": 3.87,
+        "bigmacindexjapan": 3.10,
+        "bigmacindexbrasil": 3.33,
+        "bigmacindexmexico": 2.84,
+        "bigmacindexdenmark": 3.37
     },
 
     {
