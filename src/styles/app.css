@@ -14,4 +14,11 @@ body {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }/*# sourceMappingURL=app.css.map */
