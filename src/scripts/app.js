@@ -1,5 +1,6 @@
 "use strict";
 
+/*
 var section = document.querySelector('.intro');
 var bigMacImage = document.querySelector('.intro__image');
 var imageSize = bigMacImage.clientWidth;
@@ -34,3 +35,5 @@ fetch('./assets/data/data.json')
     .catch(function(error) {
         console.error(error);
     });
+*/
+

@@ -1,7 +1,49 @@
 @import 'utils/variables';
 @import 'components/type';
 
-.intro__image {
-    width: fit-content;
-    height: fit-content;
+:root {
+    --color1 : #532314;
+    --color2 : #F8F1E8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.textIntro {
+    color: var(--color1);
+    font-weight: bold;
+    max-width: 75%;
+}
+
+.intro {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color2);
+
+    &__title {
+        font-size: 45px;
+    }
+
+    &__image {
+        width: fit-content;
+        height: fit-content;
+
+        margin-top: 86px;
+        margin-bottom: 86px;
+    }
+
+    &__text {
+        font-size: 16px;
+    }
 }
