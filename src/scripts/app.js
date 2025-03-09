@@ -171,7 +171,7 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
-    group.rotation.y+=0.003;
+    group.rotation.y+=0.002;
 }
 animate();
 
