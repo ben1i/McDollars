@@ -5,13 +5,11 @@ var bigMacImage = document.querySelector('.intro__image');
 var imageSize = bigMacImage.clientWidth;
 console.log(imageSize);
 
-
 //burger3d
-
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-
+//mise en place scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/ window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
@@ -21,7 +19,17 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.render( scene, camera );
+const light = new THREE.AmbientLight( 0xffffff, 1, 100);
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+scene.background = new THREE.Color().setHex(0xF5E9D5);
 
+
+scene.add( light, directionalLight);
+//grouper les mesh
+
+const group = new THREE.Group();
+
+//chargement mesh
 let topbun;
 let topmeat;
 let pickles;
@@ -31,18 +39,6 @@ let bottommeat;
 let botsalad;
 let cheese;
 let bottombun; 
-//lights
-
-const light = new THREE.AmbientLight( 0xffffff, 1, 100);
-const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
-directionalLight.castShadow = true;
-
-
-scene.add( light, directionalLight);
-//grouper les mesh
-const group = new THREE.Group();
-
-//models
 const loader = new GLTFLoader();
 
 loader.load('./assets/models/topbun.glb',function (gltf){
@@ -53,9 +49,6 @@ loader.load('./assets/models/topbun.glb',function (gltf){
         }
     });
     console.log('done');
- 
-  
-    
     group.add(topbun);
     animate();
   });
@@ -67,8 +60,6 @@ loader.load('./assets/models/topbun.glb',function (gltf){
         }
     });
     console.log('done');
-  
-  
     group.add(topmeat);
     animate();
   });
@@ -80,8 +71,6 @@ loader.load('./assets/models/topbun.glb',function (gltf){
         }
     });
     console.log('done');
-   
-
     group.add(pickles);
     animate();
   });
@@ -93,8 +82,6 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
         }
     });
     console.log('done');
-    
-
     group.add(salad);
     animate();
   });
@@ -106,8 +93,6 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
         }
     });
     console.log('done');
-
-  
     group.add(middlebun);
     animate();
   });
@@ -119,8 +104,6 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
         }
     });
     console.log('done');
-
-
     group.add(bottommeat);
     animate();
   });
@@ -132,8 +115,6 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
         }
     });
     console.log('done');
- 
-
     group.add(cheese);
     animate();
   });
@@ -145,8 +126,6 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
         }
     });
     console.log('done');
- 
-
     group.add(botsalad);
     animate();
   });
@@ -158,23 +137,18 @@ loader.load('./assets/models/topsalad.glb',function (gltf){
         }
     });
     console.log('done');
-  
-
     group.add(bottombun);
     animate();
     scene.add(group);
     group.position.z = -4
   });
   
-
-
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     group.rotation.y+=0.002;
 }
 animate();
-
 //
 
 fetch('./assets/data/data.json')
