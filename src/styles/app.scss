@@ -96,6 +96,7 @@ body {
     padding: $space-s-xl;
     &__année{
         font-size: 45px;
+        position: absolute;
         
         &--notselected{
             opacity: 50%;
