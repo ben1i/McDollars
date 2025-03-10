@@ -2,9 +2,7 @@
 
 
 var section = document.querySelector('.intro');
-var bigMacImage = document.querySelector('.intro__image');
-var imageSize = bigMacImage.clientWidth;
-console.log(imageSize);
+
 
 //burger3d
 import * as THREE from 'three';
@@ -22,7 +20,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.render( scene, camera );
 const light = new THREE.AmbientLight( 0xffffff, 1, 100);
 const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
-scene.background = new THREE.Color().setHex(0xF5E9D5);
+scene.background = new THREE.Color().setHex(0xffe8c4);
 
 scene.add( light, directionalLight);
 //grouper les mesh

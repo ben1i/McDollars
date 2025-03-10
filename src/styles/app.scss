@@ -5,15 +5,30 @@
     font-family: figtree;
     src: url(../assets/fonts/Figtree-SemiBold.ttf);
 }
+@font-face {
+    font-family: SuperDream;
+    src: url(../assets/fonts/Super\ Dream.ttf);
+}
 
 body {
+    color : $color1;
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
     font-family: figtree;
+    font-size: $level0;
+}
+.title{
+    font-family: SuperDream;
+    color: #82a33e;
+    font-size: $level3;
 }
 
+.subtitle{
+    font-family: SuperDream;
+    font-size: $level2;
+}
 .textIntro {
 
     color: $color1;
@@ -21,6 +36,8 @@ body {
     max-width: 75%;
 }
 .navigation{
+    position: relative;
+    z-index: 1;
     padding: $space-2xs-xs $space-xs-s;
     background-color: $color3;
     &__logo{
@@ -29,19 +46,11 @@ body {
 }
 .intro {
     overflow: hidden;
+    position: absolute;
     width: 100vw;
-    height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    
-
-    &__title {
-        font-size: 45px;
-    }
-
     &__image {
         width: fit-content;
         height: fit-content;
@@ -49,9 +58,44 @@ body {
         margin-top: 86px;
         margin-bottom: 86px;
     }
+}
 
-    &__text {
-        font-size: 16px;
+.ticket{
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    background-color: white;
+    height: 60vh;
+    transform: rotate(-5deg);
+    padding: $space-xs-s;
+    box-shadow: -16px 16px 0px ;
+    &__textexplicatif{
+        padding-bottom: $space-xs-s;
+        border-bottom: solid $color1;
+    }
+    &__line{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+.timeline{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: #ffdca3;
+    height: 100vh;
+    width: fit-content;
+    padding: $space-s-xl;
+    &__année{
+        font-size: 45px;
+        
+        &--notselected{
+            opacity: 50%;
+        }
     }
 }
 .bg{
