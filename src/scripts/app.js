@@ -132,5 +132,5 @@ fetch('./assets/data/data.json')
        });
     })
     .catch(function(error) {
-        console.error(error);
+        console.error("Problème lors du chargement des données");
     });
