@@ -1,9 +1,9 @@
 @import 'utils/variables';
 @import 'components/type';
 
-:root {
-    --color1 : #532314;
-    --color2 : #F8F1E8;
+@font-face {
+    font-family: figtree;
+    src: url(../assets/fonts/Figtree-SemiBold.ttf);
 }
 
 body {
@@ -11,14 +11,22 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
+    font-family: figtree;
 }
 
 .textIntro {
-    color: var(--color1);
+
+    color: $color1;
     font-weight: bold;
     max-width: 75%;
 }
-
+.navigation{
+    padding: $space-2xs-xs $space-xs-s;
+    background-color: $color3;
+    &__logo{
+        width: $space-l-2xl;
+    }
+}
 .intro {
     overflow: hidden;
     width: 100vw;
@@ -26,10 +34,9 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
-    background-color: var(--color2);
+    
 
     &__title {
         font-size: 45px;
