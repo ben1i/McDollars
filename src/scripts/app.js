@@ -83,7 +83,22 @@ function animate() {
 scene.add(group);
 group.position.z = -4
 animate();
+//
 
+
+
+var section = document.querySelector('.intro');
+var bigMacImage = document.querySelector('.intro__image');
+var imageSize = bigMacImage.clientWidth;
+console.log(imageSize);
+
+var currentDateDiv = document.querySelector('.intro__date');
+var currentDate = Number(currentDateDiv.textContent);
+console.log(currentDate);
+
+var priceDiv = document.querySelector('.intro__price');
+var priceInflationDiv = document.querySelector('.intro__priceInflation');
+var medianIncomeDiv = document.querySelector('.intro__medianIncome');
 
 fetch('./assets/data/data.json')
     .then(function(data) {
@@ -92,7 +107,7 @@ fetch('./assets/data/data.json')
     .then(function(data) {
         console.log(data);
 
-        var basePrice = data[0].bigmacindex
+        /*var basePrice = data[0].bigmacindex
         var relation = data[27].bigmacindex / basePrice;
         console.log(relation);
 
@@ -109,10 +124,17 @@ fetch('./assets/data/data.json')
             burger.appendChild(burgerImage);
 
             section.appendChild(burger);
-        }
+        }*/
+
+
+       data.forEach(element => {
+            if (element.year === currentDate) {
+                priceDiv.textContent = element.bigmacindex + " $";
+                priceInflationDiv.textContent = element.bigmacindexinflation + " $";
+                medianIncomeDiv.textContent = element.medianincome + "K $";
+            }
+       });
     })
     .catch(function(error) {
-        console.error(error);
+        console.error("Problème lors du chargement des données");
     });
-
-
