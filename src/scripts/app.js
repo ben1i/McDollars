@@ -86,19 +86,13 @@ animate();
 //
 
 
+var currentDate = document.querySelector('.ticket__date')
 
-var section = document.querySelector('.intro');
-var bigMacImage = document.querySelector('.intro__image');
-var imageSize = bigMacImage.clientWidth;
-console.log(imageSize);
+var priceDiv = document.querySelector('.ticket__price');
+var priceInflationDiv = document.querySelector('.ticket__priceInflation');
+var medianIncomeDiv = document.querySelector('.ticket__medianIncome');
 
-var currentDateDiv = document.querySelector('.intro__date');
-var currentDate = Number(currentDateDiv.textContent);
-console.log(currentDate);
-
-var priceDiv = document.querySelector('.intro__price');
-var priceInflationDiv = document.querySelector('.intro__priceInflation');
-var medianIncomeDiv = document.querySelector('.intro__medianIncome');
+var timelineList = document.querySelector('.timeline');
 
 fetch('./assets/data/data.json')
     .then(function(data) {
@@ -107,34 +101,23 @@ fetch('./assets/data/data.json')
     .then(function(data) {
         console.log(data);
 
-        /*var basePrice = data[0].bigmacindex
-        var relation = data[27].bigmacindex / basePrice;
-        console.log(relation);
-
-        for (let i = 0; i < Math.floor(relation); i++) {   
-            var burger = document.createElement('div');
-            burger.classList.add('burger');
-            burger.style.width = imageSize / relation + "px";
-            burger.style.height = imageSize / relation + "px";
-            
-            var burgerImage = document.createElement('img');
-            burgerImage.src = "./assets/images/bigmac-mobile.png";
-            burgerImage.alt = "Big Mac";
-            burgerImage.style.width = "100%";
-            burger.appendChild(burgerImage);
-
-            section.appendChild(burger);
-        }*/
-
-
        data.forEach(element => {
-            if (element.year === currentDate) {
+
+            var timelineItem = document.createElement('button');
+            timelineItem.classList.add('timeline__année', 'subtitle');
+            timelineItem.textContent = element.year;
+            timelineList.appendChild(timelineItem);
+
+            timelineItem.addEventListener('click', function() {
                 priceDiv.textContent = element.bigmacindex + " $";
                 priceInflationDiv.textContent = element.bigmacindexinflation + " $";
                 medianIncomeDiv.textContent = element.medianincome + "K $";
-            }
+                currentDate.textContent = element.year;
+            });
+
        });
     })
     .catch(function(error) {
         console.error("Problème lors du chargement des données");
+        console.log(error);
     });
