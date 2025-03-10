@@ -60,7 +60,7 @@ body {
     }
 }
 
-.ticket{
+.ticket, .ticketingrédient{
     position: absolute;
     right: 10%;
     bottom: 15%;
@@ -68,7 +68,7 @@ body {
     height: 60vh;
     transform: rotate(-5deg);
     padding: $space-xs-s;
-    box-shadow: -16px 16px 0px ;
+    box-shadow: -16px 16px 0px rgba(83, 35, 20, 0.2);
     &__textexplicatif{
         padding-bottom: $space-xs-s;
         border-bottom: solid $color1;
@@ -79,6 +79,9 @@ body {
         justify-content: space-between;
     }
 
+}
+.ticketingrédient{
+    transform: rotate(5deg);
 }
 .timeline{
     position: absolute;
