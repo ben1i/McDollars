@@ -82,6 +82,7 @@ body {
 }
 .ticketingrédient{
     transform: rotate(5deg);
+    z-index: -1;
 }
 .timeline{
     position: absolute;
