@@ -78,6 +78,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
     }
+    
 
 }
 .ticketingrédient{
@@ -91,9 +92,14 @@ body {
     flex-flow: column wrap;
     align-items: center;
     background-color: #ffdca3;
-    height: 100vh;
+    
     width: fit-content;
     padding: $space-s-xl;
+    &__btns{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
     &__année{
         font-size: 45px;
         position: absolute;

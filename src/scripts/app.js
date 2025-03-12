@@ -1,12 +1,12 @@
 "use strict";
-
-
+import gsap from 'gsap';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 var section = document.querySelector('.intro');
 
 
 //burger3d
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 
 //mise en place scene
 const scene = new THREE.Scene();
@@ -53,7 +53,6 @@ const modelData = [
 
 const loader = new GLTFLoader();
 //utilisation de l'Ia pour le chargement groupé
-
 const loadedModels = [];
 
 function loadModels(url, material, name){
@@ -67,13 +66,76 @@ function loadModels(url, material, name){
 
         loadedModels.push({name: name, model: modele});
         group.add(modele);
-        console.log(`Modèle chargé: ${name}`);
+        
+        /*group.children.forEach((modele, index)=> {
+            if (modele.isMesh) {
+                gsap.to(modele.position, {
+                    y: index*2,
+                    duration:1,
+                    repeat:-1
+                })
+            }
+        })*/
     })
     
 }
 modelData.forEach((data, index) => {
     loadModels(data.url, data.material, modelData[index].url.split('/').pop().split('.')[0]);
 });
+
+
+
+//
+const ingr = document.querySelector('.timeline__switch')
+let bool = true;
+ingr.addEventListener("click", function(){
+  bool = !bool;
+  console.log(bool)
+  if(bool==false){
+    ingr.innerText = "BigMac";
+        gsap.to(camera.position,{
+            z: 2,
+            duration: 1
+        });
+        const tl = gsap.timeline();
+        tl.to(".ticketingrédient",{
+            y : 10,
+            x : - 12,
+            duration: 0.5
+        })
+        tl.to(".ticket", {
+            zIndex : -1,
+            duration:0
+        })
+        tl.to(".ticketingrédient",{
+            x : 1,
+            duration: 0.7
+        });
+    }else{
+        ingr.innerText = "Ingrédients";
+        gsap.to(camera.position,{
+            z: 0,
+            duration: 1
+        });
+    
+        const tl = gsap.timeline();
+        tl.to(".ticket",{
+            y : -10,
+            x :  12,
+            duration: 0.5
+        })
+        tl.to(".ticketingrédient", {
+            zIndex : -1,
+            duration:0
+        })
+        tl.to(".ticket",{
+            x : 0,
+            zIndex:2,
+            duration: 0.7
+        });
+  }
+});
+
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
@@ -83,16 +145,13 @@ function animate() {
 scene.add(group);
 group.position.z = -4
 animate();
-//
-
-
 var currentDate = document.querySelector('.ticket__date')
 
 var priceDiv = document.querySelector('.ticket__price');
 var priceInflationDiv = document.querySelector('.ticket__priceInflation');
 var medianIncomeDiv = document.querySelector('.ticket__medianIncome');
 
-var timelineList = document.querySelector('.timeline');
+var timelineList = document.querySelector('.timeline__btns');
 
 fetch('./assets/data/data.json')
     .then(function(data) {
