@@ -85,6 +85,37 @@ group.position.z = -4
 animate();
 //
 
+if (window.matchMedia("(max-width: 1900px)").matches) {
+    camera.position.x = 1;
+}
+
+if (window.matchMedia("(max-width: 1750px)").matches) {
+    camera.position.x = 1.5;
+    camera.position.z = 2;
+}
+
+if (window.matchMedia("(max-width: 1600px)").matches) {
+    camera.position.x = 4;
+}
+
+if (window.matchMedia("(max-width: 1300px)").matches) {
+    camera.position.x = 3;
+    camera.position.z = 1.5;
+}
+
+if (window.matchMedia("(max-width: 1150px)").matches) {
+    camera.position.x = 3.5;
+    camera.position.z = 2.5;
+}
+
+if (window.matchMedia("(max-width: 1050px)").matches) {
+    camera.position.x = 4;
+    camera.position.z = 4;
+}
+
+if (window.matchMedia("(max-width: 950px)").matches) {
+    camera.position.z = 4;
+}
 
 var currentDate = document.querySelector('.ticket__date')
 
