@@ -92,6 +92,13 @@ var priceDiv = document.querySelector('.ticket__price');
 var priceInflationDiv = document.querySelector('.ticket__priceInflation');
 var medianIncomeDiv = document.querySelector('.ticket__medianIncome');
 
+var breadPriceDiv = document.querySelector('.ticketingrédient__breadprice');
+var beefPriceDiv = document.querySelector('.ticketingrédient__beefprice');
+var lettucePriceDiv = document.querySelector('.ticketingrédient__lettuceprice');
+var cheddarPriceDiv = document.querySelector('.ticketingrédient__cheddarprice');
+var totalPriceDiv = document.querySelector('.ticketingrédient__totalprice');
+var profitDiv = document.querySelector('.ticketingrédient__profit');
+
 var timelineList = document.querySelector('.timeline');
 
 fetch('./assets/data/data.json')
@@ -113,6 +120,42 @@ fetch('./assets/data/data.json')
                 priceInflationDiv.textContent = element.bigmacindexinflation + " $";
                 medianIncomeDiv.textContent = element.medianincome + "K $";
                 currentDate.textContent = element.year;
+
+                if (!element.bigmacbreadprice) {
+                    breadPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    breadPriceDiv.textContent = element.bigmacbreadprice + "$";
+                }
+
+                if (!element.bigmacbeefprice) {
+                    beefPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    beefPriceDiv.textContent = element.bigmacbeefprice + "$";
+                }
+
+                if (!element.bigmaclettuceprice) {
+                    lettucePriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    lettucePriceDiv.textContent = element.bigmaclettuceprice + "$";
+                }
+
+                if (!element.bigmaccheddarprice) {
+                    cheddarPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    cheddarPriceDiv.textContent = element.bigmaccheddarprice + "$";
+                }
+
+                if (!element.bigmacbreadprice) {
+                    breadPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    totalPriceDiv.textContent = element.bigmacprice + "$";
+                }
+
+                if (!element.bigmacbreadprice) {
+                    profiteDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    profitDiv.textContent = (element.bigmacindex - element.bigmacprice) + "$";
+                }
             });
 
        });

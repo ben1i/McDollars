@@ -5,6 +5,7 @@
     font-family: figtree;
     src: url(../assets/fonts/Figtree-SemiBold.ttf);
 }
+
 @font-face {
     font-family: SuperDream;
     src: url(../assets/fonts/Super\ Dream.ttf);
@@ -17,24 +18,26 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: figtree;
-    font-size: $level0;
+    font-size: $font-0;
 }
+
 .title{
     font-family: SuperDream;
     color: #82a33e;
-    font-size: $level3;
+    font-size: $font-2;
 }
 
 .subtitle{
     font-family: SuperDream;
-    font-size: $level2;
+    font-size: $font-1;
 }
-.textIntro {
 
+.textIntro {
     color: $color1;
     font-weight: bold;
     max-width: 75%;
 }
+
 .navigation{
     position: relative;
     z-index: 1;
@@ -44,6 +47,7 @@ body {
         width: $space-l-2xl;
     }
 }
+
 .intro {
     overflow: hidden;
     position: absolute;
@@ -62,7 +66,7 @@ body {
 
 .ticket, .ticketingrédient{
     position: absolute;
-    right: 10%;
+    right: 31px;
     bottom: 15%;
     background-color: white;
     height: 60vh;
@@ -80,10 +84,12 @@ body {
     }
 
 }
+
 .ticketingrédient{
     transform: rotate(5deg);
     z-index: -1;
 }
+
 .timeline{
     position: absolute;
     top: 0;
@@ -95,7 +101,7 @@ body {
     width: fit-content;
     padding: $space-s-xl;
     &__année{
-        font-size: 45px;
+        font-size: $font-2;
         position: absolute;
         
         &--notselected{
@@ -103,9 +109,29 @@ body {
         }
     }
 }
+
 .bg{
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (max-width: 1600px) {
+    .timeline{
+        flex-flow: row wrap;
+        height: 10%;
+        width: 100vw;
+
+        &__titrexplicatif {
+            display: none;
+        }
+
+        &__année{
+            position: absolute;
+        }
+    }
 }
