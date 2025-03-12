@@ -19,6 +19,18 @@ body {
     font-family: figtree;
     font-size: $level0;
 }
+
+.accueil {
+    width: 100vw;
+    height: fit-content;
+    background-color: $c-bg-accueil;
+    position: absolute;
+    z-index: 98;
+
+    .accueil__title {
+
+    }
+}
 .title{
     font-family: SuperDream;
     color: #82a33e;
