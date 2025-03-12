@@ -26,7 +26,7 @@ body {
 .title{
     font-family: SuperDream;
     color: #82a33e;
-    font-size: $font-2;
+    font-size: $font-3;
 }
 
 .subtitle{
@@ -93,8 +93,6 @@ body {
         border-top: solid $color1;
         margin-top: 0;
     }
-    
-
 }
 
 .ticketingrédient{
@@ -106,7 +104,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;             /* si tu veux la mettre à droite, par exemple */
-    width: 300px;         /* largeur fixe ou ce que tu veux */
+    width: 15vw;
     height: 100vh;        /* toute la hauteur de la fenêtre */
     overflow-y: auto;     /* active la scrollbar verticale */
     overflow-x: hidden;   /* évite le scroll horizontal */
@@ -115,20 +113,21 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0;
-    
     &__titrexplicatif {
         text-align: center;
         margin-top: 60px;
     }
-
     &__btns{
         display: flex;
         flex-flow: column wrap;
         align-items: center;
     }
-
+    /* &__switch{
+        position: fixed;
+        z-index: 999;
+    } */
     &__année{
-        font-size: $font-2;
+        font-size: $font-3;
         //position: absolute;
 
          height: fit-content;
@@ -162,18 +161,111 @@ body {
     height: 100vh;
 }
 
-@media (max-width: 1600px) {
+@media (min-width: 2200px) {
+    body {
+        font-size: $font-1;
+    }
+    .title{
+        font-size: $font-4;
+    }
+    .subtitle{
+        font-size: $font-2;
+    }
     .timeline{
+        &__année{
+            font-size: $font-4;
+        }
+    } 
+}
+@media (min-width: 1921px) {
+    body {
+        font-size: $font-0;
+    }
+    .title{
+        font-size: $font-3;
+    }
+    .subtitle{
+        font-size: $font-1;
+    }
+    .timeline{
+        &__année{
+            font-size: $font-3;
+        }
+    } 
+}
+@media (max-width: 1250px) {
+    body {
+        font-size: $font--1;
+    }
+    .title{
+        font-size: $font-2;
+    }
+    .subtitle{
+        font-size: $font-0;
+    }
+    .timeline{
+        width: 20vw;
+        &__année{
+            font-size: $font-2;
+        }
+    } 
+}
+@media (max-width: 1250px) {
+    body {
+        font-size: $font--1;
+    }
+    .title{
+        font-size: $font-2;
+    }
+    .subtitle{
+        font-size: $font-0;
+    }
+    .timeline{
+        &__année{
+            font-size: $font-2;
+        }
+    } 
+}
+@media (max-width: 800px) {
+    body {
+        font-size: $font--2;
+    }
+    .title{
+        font-size: $font-2;
+    }
+    .subtitle{
+        font-size: $font-0;
+    }
+    .timeline{
+        &__année{
+            font-size: $font-2;
+        }
+    } 
+}
+
+@media (max-width: 700px) {
+    .timeline{
+        top: auto;
+        bottom: 0;
+        margin: 0;
+        justify-content: space-evenly;
         flex-flow: row wrap;
         height: 10%;
         width: 100vw;
+        overflow-y: hidden;
+        overflow-x: auto;
 
+        &__switch{
+            position: fixed;
+        }
         &__titrexplicatif {
             display: none;
         }
+        &__btns {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
 
-        &__année{
-            position: absolute;
         }
     }
 }

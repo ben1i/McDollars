@@ -3,7 +3,7 @@ $c-alt: #e41612;
 $c-text: #444;
 
 $size-text: 18px;
-$size-text-phone: 13px;
+
 
 $space-l-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
 $space-s-xl: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
@@ -24,11 +24,14 @@ $level3 : 44px;
 $level4 : 62px;
 */
 
-$font--2: clamp(0.5002rem, 0.4132rem + 0.4349vw, 0.7502rem);
-$font--1: clamp(0.7072rem, 0.5842rem + 0.615vw, 1.0608rem);
-$font-0: clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem);
-$font-1: clamp(1.414rem, 1.1681rem + 1.2296vw, 2.121rem);
-$font-2: clamp(1.9994rem, 1.6517rem + 1.7386vw, 2.9991rem);
-$font-3: clamp(2.8271rem, 2.3355rem + 2.4584vw, 4.2407rem);
-$font-4: clamp(3.9976rem, 3.3024rem + 3.4762vw, 5.9964rem);
-$font-5: clamp(5.6526rem, 4.6695rem + 4.9153vw, 8.4789rem);
+
+
+$font--2: clamp(0.6689rem, 0.6424rem + 0.1413vw, 0.9815rem);
+$font--1: clamp(0.863rem, 0.8256rem + 0.1998vw, 1.305rem);
+$font-0: clamp(0.9375rem, 0.8845rem + 0.2825vw, 1.5625rem);
+$font-1: clamp(1.3256rem, 1.2507rem + 0.3994vw, 2.2094rem);
+$font-2: clamp(1.8744rem, 1.7685rem + 0.5648vw, 3.1241rem);
+$font-3: clamp(2.6504rem, 2.5007rem + 0.7986vw, 4.4174rem);
+$font-4: clamp(3.7477rem, 3.536rem + 1.1293vw, 6.2462rem);
+$font-5: clamp(5.2993rem, 4.9999rem + 1.5968vw, 8.8322rem);
+$font-6: clamp(7.4932rem, 7.0699rem + 2.2578vw, 12.4887rem);
