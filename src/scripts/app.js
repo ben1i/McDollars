@@ -162,7 +162,7 @@ var cheddarPriceDiv = document.querySelector('.ticketingrédient__cheddarprice')
 var totalPriceDiv = document.querySelector('.ticketingrédient__totalprice');
 var profitDiv = document.querySelector('.ticketingrédient__profit');
 
-var timelineList = document.querySelector('.timeline');
+var timelineList = document.querySelector('.timeline__btns');
 
 fetch('./assets/data/data.json')
     .then(function(data) {
@@ -185,39 +185,40 @@ fetch('./assets/data/data.json')
                 currentDate.textContent = element.year;
 
                 if (!element.bigmacbreadprice) {
-                    breadPriceDiv.textContent = "Pas de donnée pour cette période";
+                    breadPriceDiv.textContent = "N/A";
                 } else {
                     breadPriceDiv.textContent = element.bigmacbreadprice + "$";
                 }
 
                 if (!element.bigmacbeefprice) {
-                    beefPriceDiv.textContent = "Pas de donnée pour cette période";
+                    beefPriceDiv.textContent = "N/A";
                 } else {
                     beefPriceDiv.textContent = element.bigmacbeefprice + "$";
                 }
 
                 if (!element.bigmaclettuceprice) {
-                    lettucePriceDiv.textContent = "Pas de donnée pour cette période";
+                    lettucePriceDiv.textContent = "N/A";
                 } else {
                     lettucePriceDiv.textContent = element.bigmaclettuceprice + "$";
                 }
 
                 if (!element.bigmaccheddarprice) {
-                    cheddarPriceDiv.textContent = "Pas de donnée pour cette période";
+                    cheddarPriceDiv.textContent = "N/A";
                 } else {
                     cheddarPriceDiv.textContent = element.bigmaccheddarprice + "$";
                 }
 
                 if (!element.bigmacbreadprice) {
-                    breadPriceDiv.textContent = "Pas de donnée pour cette période";
+                    breadPriceDiv.textContent = "N/A";
                 } else {
                     totalPriceDiv.textContent = element.bigmacprice + "$";
                 }
 
                 if (!element.bigmacbreadprice) {
-                    profiteDiv.textContent = "Pas de donnée pour cette période";
+                    profitDiv.textContent = "N/A";
                 } else {
-                    profitDiv.textContent = (element.bigmacindex - element.bigmacprice) + "$";
+                    var profit = element.bigmacindex - element.bigmacprice
+                    profitDiv.textContent = profit.toFixed(2) + "$";
                 }
             });
 
