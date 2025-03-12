@@ -145,6 +145,40 @@ function animate() {
 scene.add(group);
 group.position.z = -4
 animate();
+//
+
+if (window.matchMedia("(max-width: 1900px)").matches) {
+    camera.position.x = 1;
+}
+
+if (window.matchMedia("(max-width: 1750px)").matches) {
+    camera.position.x = 1.5;
+    camera.position.z = 2;
+}
+
+if (window.matchMedia("(max-width: 1600px)").matches) {
+    camera.position.x = 4;
+}
+
+if (window.matchMedia("(max-width: 1300px)").matches) {
+    camera.position.x = 3;
+    camera.position.z = 1.5;
+}
+
+if (window.matchMedia("(max-width: 1150px)").matches) {
+    camera.position.x = 3.5;
+    camera.position.z = 2.5;
+}
+
+if (window.matchMedia("(max-width: 1050px)").matches) {
+    camera.position.x = 4;
+    camera.position.z = 4;
+}
+
+if (window.matchMedia("(max-width: 950px)").matches) {
+    camera.position.z = 4;
+}
+
 var currentDate = document.querySelector('.ticket__date')
 
 var priceDiv = document.querySelector('.ticket__price');
@@ -152,6 +186,14 @@ var priceInflationDiv = document.querySelector('.ticket__priceInflation');
 var medianIncomeDiv = document.querySelector('.ticket__medianIncome');
 
 var timelineList = document.querySelector('.timeline__btns');
+var breadPriceDiv = document.querySelector('.ticketingrédient__breadprice');
+var beefPriceDiv = document.querySelector('.ticketingrédient__beefprice');
+var lettucePriceDiv = document.querySelector('.ticketingrédient__lettuceprice');
+var cheddarPriceDiv = document.querySelector('.ticketingrédient__cheddarprice');
+var totalPriceDiv = document.querySelector('.ticketingrédient__totalprice');
+var profitDiv = document.querySelector('.ticketingrédient__profit');
+
+var timelineList = document.querySelector('.timeline');
 
 fetch('./assets/data/data.json')
     .then(function(data) {
@@ -172,6 +214,42 @@ fetch('./assets/data/data.json')
                 priceInflationDiv.textContent = element.bigmacindexinflation + " $";
                 medianIncomeDiv.textContent = element.medianincome + "K $";
                 currentDate.textContent = element.year;
+
+                if (!element.bigmacbreadprice) {
+                    breadPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    breadPriceDiv.textContent = element.bigmacbreadprice + "$";
+                }
+
+                if (!element.bigmacbeefprice) {
+                    beefPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    beefPriceDiv.textContent = element.bigmacbeefprice + "$";
+                }
+
+                if (!element.bigmaclettuceprice) {
+                    lettucePriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    lettucePriceDiv.textContent = element.bigmaclettuceprice + "$";
+                }
+
+                if (!element.bigmaccheddarprice) {
+                    cheddarPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    cheddarPriceDiv.textContent = element.bigmaccheddarprice + "$";
+                }
+
+                if (!element.bigmacbreadprice) {
+                    breadPriceDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    totalPriceDiv.textContent = element.bigmacprice + "$";
+                }
+
+                if (!element.bigmacbreadprice) {
+                    profiteDiv.textContent = "Pas de donnée pour cette période";
+                } else {
+                    profitDiv.textContent = (element.bigmacindex - element.bigmacprice) + "$";
+                }
             });
 
        });

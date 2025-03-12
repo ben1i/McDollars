@@ -9,93 +9,31 @@
   <link rel="stylesheet" href="styles/app.css">
   <script src="scripts/app.js" defer></script>
 </head>
+
 <body>
   <canvas class="bg"></canvas>
+  
   <nav class="navigation">
     <img class="navigation__logo" src="assets/images/McDollarsLogo.svg" alt="logo macdollars">
   </nav>
   
   <section class="intro">
       <h1 class="intro__title textIntro title">MacDollars</h1>
-
-
-      
       <p class="intro__text textIntro subtitle">L’évolution du BigMac depuis 1970</p>
-    </section>
-    <div class="ticket">
-      <h2 class="ticket__titrexplicatif title">
-        Ticket de caisse
-      </h2>
-      <h2 class="ticket__titrexplicatif subtitle">
-        Voici le BigMac de <span class="ticket__date">1970</span> 
-      </h2>
-      <p class="ticket__textexplicatif">
-        Il sera notre référence pendant cette experience !
-      </p>
+  </section>
 
-      <ul class="ticket__listeprix">
-        <li class="ticket__listel">
-          <div class="ticket__line">
-            <p>Prix :</p>
-            <p class="ticket__price">0.55 $</p>
-          </div>
-          
-        </li>
-        <li class="ticket__listel">
-          <div class="ticket__line">
-            <p>Prix (ajusté à l'inflation) :</p>
-            <p class="ticket__priceInflation">4.44 $</p>
-          </div>
-          
-        </li>
-        <li class="ticket__listel">
-          <div class="ticket__line">
-            <p>Salaire moyen :</p>
-            <p class="ticket__medianIncome">4.1K $</p>
-          </div>
-          
-        </li>
-      </ul>
-    </div>
+  <div class="ticket">
+    <h2 class="ticket__titrexplicatif title">
+      Ticket de caisse
+    </h2>
 
-    <div class="ticketingrédient">
-      <h2 class="ticketingrédient__titrexplicatif title">
-        Ticket de caisse
-      </h2>
-      <h2 class="ticketingrédient__titrexplicatif subtitle">
-        Prix des ingrédients 1970 
-      </h2>
-      <p class="ticketingrédient__textexplicatif">
-        Voici une estimation du prix de chacun des ingrédients
-      </p>
+    <h2 class="ticket__titrexplicatif subtitle">
+      Voici le BigMac de <span class="ticket__date">1970</span> 
+    </h2>
 
-      <ul class="ticketingrédient__listeprix">
-        <li class="ticketingrédient__listel">
-          <div class="ticketingrédient__line">
-            <p>Pain :</p>
-          </div>
-          
-        </li>
-        <li class="ticketingrédient__listel">
-          <div class="ticketingrédient__line">
-            <p>Viande :</p>
-          </div>
-          
-        </li>
-        <li class="ticketingrédient__listel">
-          <div class="ticketingrédient__line">
-            <p>Salade :</p>
-          </div>
-          
-        </li>
-        <li class="ticketingrédient__listel">
-          <div class="ticketingrédient__line">
-            <p>Cornichons :</p>
-          </div>
-          
-        </li>
-      </ul>
-    </div>
+    <p class="ticket__textexplicatif">
+      Il sera notre référence pendant cette experience !
+    </p>
 
     <div class="timeline">
       
@@ -107,6 +45,96 @@
       
       </div>
     </div>
+    <ul class="ticket__listeprix">
+      <li class="ticket__listel">
+        <div class="ticket__line">
+          <p>Prix :</p>
+          <p class="ticket__price">0.55 $</p>
+        </div>
+      </li>
+
+      <li class="ticket__listel">
+        <div class="ticket__line">
+          <p>Prix (ajusté à l'inflation) :</p>
+          <p class="ticket__priceInflation">4.44 $</p>
+        </div>
+      </li>
+
+      <li class="ticket__listel">
+        <div class="ticket__line">
+          <p>Salaire moyen :</p>
+          <p class="ticket__medianIncome">4.1K $</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="ticketingrédient">
+    <h2 class="ticketingrédient__titrexplicatif title">
+      Ticket de caisse
+    </h2>
+
+    <h2 class="ticketingrédient__titrexplicatif subtitle">
+      Prix des ingrédients 1970 
+    </h2>
+
+    <p class="ticketingrédient__textexplicatif">
+      Voici une estimation du prix de chacun des ingrédients
+    </p>
+
+    <ul class="ticketingrédient__listeprix">
+      <li class="ticketingrédient__listel">
+        <div class="ticketingrédient__line">
+          <p>Pain :</p>
+          <p class="ticketingrédient__breadprice">Pas de donnée pour cette période</p>
+        </div>
+      </li>
+
+      <li class="ticketingrédient__listel">
+        <div class="ticketingrédient__line">
+          <p>Viande :</p>
+          <p class="ticketingrédient__beefprice">Pas de donnée pour cette période</p>
+        </div>
+      </li>
+
+      <li class="ticketingrédient__listel">
+        <div class="ticketingrédient__line">
+          <p>Salade :</p>
+          <p class="ticketingrédient__lettuceprice">Pas de donnée pour cette période</p>
+        </div>
+      </li>
+
+      <li class="ticketingrédient__listel">
+        <div class="ticketingrédient__line">
+          <p>Cheddar :</p>
+          <p class="ticketingrédient__cheddarprice">Pas de donnée pour cette période</p>
+        </div>
+      </li>
+
+      <li class="ticketingrédient__listel">
+        <div class="ticketingrédient__line">
+          <p>Coût total de production :</p>
+          <p class="ticketingrédient__totalprice">Pas de donnée pour cette période</p>
+        </div>
+      </li>
+
+      <li class="ticketingrédient__listel">
+        <div class="ticketingrédient__line">
+          <p>Profit sur 1 Big Mac:</p>
+          <p class="ticketingrédient__profit">Pas de donnée pour cette période</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <ul class="timeline">
+
+    <p class="timeline__titrexplicatif title">
+      Ligne du temps :
+    </p>
+  </ul>
 
 </body>
 </html>
