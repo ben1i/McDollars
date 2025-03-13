@@ -26,12 +26,12 @@ body {
 .title{
     font-family: SuperDream;
     color: #82a33e;
-    font-size: $font-3;
+    font-size: $font-4;
 }
 
 .subtitle{
     font-family: SuperDream;
-    font-size: $font-1;
+    font-size: $font-2;
 }
 
 .textIntro {
@@ -42,6 +42,9 @@ body {
 
 .navigation{
     position: relative;
+    display: flex;
+    justify-content: center;
+    height: 50px;
     z-index: 1;
     padding: $space-2xs-xs $space-xs-s;
     background-color: $color3;
@@ -116,6 +119,7 @@ body {
     &__titrexplicatif {
         text-align: center;
         margin-top: 60px;
+        margin-bottom: auto;
     }
     &__btns{
         display: flex;
@@ -127,7 +131,7 @@ body {
         z-index: 999;
     } */
     &__année{
-        font-size: $font-3;
+        font-size: $font-4;
         //position: absolute;
 
          height: fit-content;
@@ -161,23 +165,9 @@ body {
     height: 100vh;
 }
 
-@media (min-width: 2200px) {
-    body {
-        font-size: $font-1;
-    }
-    .title{
-        font-size: $font-4;
-    }
-    .subtitle{
-        font-size: $font-2;
-    }
-    .timeline{
-        &__année{
-            font-size: $font-4;
-        }
-    } 
-}
-@media (min-width: 1921px) {
+
+
+@media (max-width: 1921px) {
     body {
         font-size: $font-0;
     }
@@ -212,7 +202,7 @@ body {
 }
 @media (max-width: 1250px) {
     body {
-        font-size: $font--1;
+        font-size: $font--2;
     }
     .title{
         font-size: $font-2;
@@ -222,7 +212,7 @@ body {
     }
     .timeline{
         &__année{
-            font-size: $font-2;
+            font-size: $font-3;
         }
     } 
 }
@@ -245,8 +235,7 @@ body {
 
 @media (max-width: 700px) {
     .timeline{
-        top: auto;
-        bottom: 0;
+        top: clamp(2.5625rem, 1.6712rem + 4.4565vw, 5.125rem);
         margin: 0;
         justify-content: space-evenly;
         flex-flow: row wrap;
@@ -257,6 +246,8 @@ body {
 
         &__switch{
             position: fixed;
+            align-self: end;
+            /* margin-bottom: 10px; */
         }
         &__titrexplicatif {
             display: none;
