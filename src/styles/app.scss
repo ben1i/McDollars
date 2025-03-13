@@ -37,6 +37,7 @@ body {
 .textIntro {
     color: $color1;
     font-weight: bold;
+    /* margin: 0; */
     max-width: 75%;
 }
 
@@ -45,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     height: 50px;
-    z-index: 1;
+    z-index: 3;
     padding: $space-2xs-xs $space-xs-s;
     background-color: $color3;
     &__logo{
@@ -59,13 +60,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &__image {
-        width: fit-content;
-        height: fit-content;
-
-        margin-top: 86px;
-        margin-bottom: 86px;
-    }
+    z-index: -1;
+}
+.textIntro {
+    margin: 1%;
 }
 
 .ticket, .ticketingrédient{
@@ -160,7 +158,7 @@ body {
     &__titrexplicatif {
         text-align: center;
         margin-top: 60px;
-        margin-bottom: auto;
+        /* margin-bottom: auto; */
     }
     &__btns{
         display: flex;
@@ -190,7 +188,8 @@ body {
     }  
         &__switch{
             position: fixed;
-            top: 25%;
+            top: 5%;
+            left: 15vw;
             font-family: SuperDream;
             font-size: $font-0;
             background-color: #82a33e;
@@ -236,7 +235,15 @@ body {
         &__année{
             font-size: $font-3;
         }
-    } 
+        &__switch{
+            left: 15vw;
+        }
+    }
+    .ticket, .ticketingrédient{
+        &__initialburger, &__placeholderburger {
+            height: 100px;
+        }
+    }
 }
 @media (max-width: 1250px) {
     body {
@@ -253,23 +260,13 @@ body {
         &__année{
             font-size: $font-2;
         }
-    } 
-}
-@media (max-width: 1250px) {
-    body {
-        font-size: $font--2;
-    }
-    .title{
-        font-size: $font-2;
-    }
-    .subtitle{
-        font-size: $font-0;
-    }
-    .timeline{
-        &__année{
-            font-size: $font-3;
+        &__switch{
+            left: 20vw;
         }
     } 
+    .ticket, .ticketingrédient{
+        bottom: 2.5vh;
+    }
 }
 @media (max-width: 800px) {
     body {
@@ -302,6 +299,9 @@ body {
         &__switch{
             position: fixed;
             align-self: end;
+            top: auto;
+            margin: 0;
+            left: auto;
             /* margin-bottom: 10px; */
         }
         &__titrexplicatif {
@@ -312,6 +312,36 @@ body {
             flex-direction: row;
             flex-wrap: nowrap;
 
+        }
+    }
+    .textIntro {
+        margin: auto;
+    }
+    .intro{
+        margin-top: 10vh;
+    }
+    .ticket__titrexplicatif{
+        margin: 5px 0 5px 0;
+    }
+}
+
+@media (max-height: 750px) {
+    .ticket, .ticketingrédient{
+        &__initialburger, &__placeholderburger {
+            height: 90px;
+        }
+    }
+    body {
+        font-size: 9px;
+    }
+    .ticket__titrexplicatif{
+        margin: 0;
+    }
+}
+@media (max-height: 500px) {
+    .timeline{
+        &__switch{
+            top: 16%;
         }
     }
 }

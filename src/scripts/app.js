@@ -137,7 +137,7 @@ ingr.addEventListener("click", function(){
         })
         tl.to(".ticket",{
             x : 0,
-            zIndex:2,
+            zIndex:1,
             duration: 0.7
         });
     }
@@ -145,10 +145,13 @@ ingr.addEventListener("click", function(){
 
 group.position.z = -4
 
+if(window.matchMedia("(max-width: 1040px)").matches){
+    group.position.z = -5;
+    group.position.y = 1.1;
+}
 if(window.matchMedia("(max-width: 600px)").matches){
     group.position.z = -6;
-    group.position.y = 1.5;
-    camera.position.y = 0;
+    group.position.y = 1;
 }
 
 
