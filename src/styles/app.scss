@@ -117,6 +117,7 @@ body {
     &__titrexplicatif {
         text-align: center;
         margin-top: 60px;
+        
     }
     &__btns{
         display: flex;
@@ -130,7 +131,7 @@ body {
     &__année{
         font-size: $font-3;
         //position: absolute;
-
+        color: $color1;
          height: fit-content;
          padding: 15px;
          box-sizing: border-box;
@@ -149,10 +150,18 @@ body {
 
     }  
         &__switch{
+            position: fixed;
+            top: 25%;
             font-family: SuperDream;
+            font-size: $font-0;
             background-color: #82a33e;
             border: none;
             height: fit-content;
+            padding: $space-2xs-xs;
+            width: fit-content;
+            border-radius: 15px;
+            align-self: center;
+            margin: 22px;
             &:hover{
                 cursor: pointer;
                 background-color: $color3;
@@ -268,6 +277,7 @@ body {
 
         &__switch{
             position: fixed;
+            top: 10%
         }
         &__titrexplicatif {
             display: none;
