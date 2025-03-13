@@ -55,7 +55,7 @@ const loader = new GLTFLoader();
 //utilisation de l'Ia pour le chargement groupé
 const loadedModels = [];
 const meshes = {};
-function loadModels(url, material, name, index = 0){
+function loadModels(url, material, name){
     loader.load(url, function (gltf){
         const modele = gltf.scene;
         let meshIndex = 0;
@@ -64,24 +64,19 @@ function loadModels(url, material, name, index = 0){
                 child.material = material;
                 meshes[name] = child;
                 group.add(child);
-                meshIndex++; 
-                
+                meshIndex++;      
             }
         });
-
         loadedModels.push({name: name, model: modele});
         group.add(modele);
-
     })
-    
 }
 modelData.forEach((data) => {
     const name = data.url.split('/').pop().split('.')[0];
     loadModels(data.url, data.material, name); // Passer le nom pour l'assignation dans l'objet meshes
 });
-
 //
-const ingr = document.querySelector('.timeline__switch')
+const ingr = document.querySelector('.timeline__switch');
 let bool = true;
 ingr.addEventListener("click", function(){
     bool = !bool;
@@ -148,14 +143,27 @@ ingr.addEventListener("click", function(){
     }
 });
 
+group.position.z = -4
+
+if(window.matchMedia("(max-width: 600px)").matches){
+    group.position.z = -6;
+    group.position.y = 1.5;
+    camera.position.y = 0;
+}
+
+
+
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     group.rotation.y+=0.01;
 }
 
+
+
+
 scene.add(group);
-group.position.z = -4
+
 animate();
 //
 var currentDate = document.querySelectorAll('.ticket__date')
