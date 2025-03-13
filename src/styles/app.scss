@@ -26,12 +26,12 @@ body {
 .title{
     font-family: SuperDream;
     color: #82a33e;
-    font-size: $font-3;
+    font-size: $font-4;
 }
 
 .subtitle{
     font-family: SuperDream;
-    font-size: $font-1;
+    font-size: $font-2;
 }
 
 .textIntro {
@@ -42,6 +42,9 @@ body {
 
 .navigation{
     position: relative;
+    display: flex;
+    justify-content: center;
+    height: 50px;
     z-index: 1;
     padding: $space-2xs-xs $space-xs-s;
     background-color: $color3;
@@ -93,6 +96,46 @@ body {
         border-top: solid $color1;
         margin-top: 0;
     }
+
+    &__burgersDiv {
+        display: grid;
+        grid-template-columns: max-content repeat(2, 1fr);
+        width: 100%;
+        height: fit-content;
+    }
+
+    &__initialburger, &__placeholderburger {
+        height: 200px;
+
+        & img {
+            height: 100%;
+        }
+    }
+
+    &__equal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__equalLetter {
+        font-size: $font-5;
+        margin: 0;
+    }
+
+    &__compareDate {
+        align-self: end;
+    }
+
+    &__miniburgers {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.burger__compare {
+    align-self: end;
 }
 
 .ticketingrédient{
@@ -117,19 +160,15 @@ body {
     &__titrexplicatif {
         text-align: center;
         margin-top: 60px;
-        
+        margin-bottom: auto;
     }
     &__btns{
         display: flex;
         flex-flow: column wrap;
         align-items: center;
     }
-    /* &__switch{
-        position: fixed;
-        z-index: 999;
-    } */
     &__année{
-        font-size: $font-3;
+        font-size: $font-4;
         //position: absolute;
         color: $color1;
          height: fit-content;
@@ -181,23 +220,9 @@ body {
     height: 100vh;
 }
 
-@media (min-width: 2200px) {
-    body {
-        font-size: $font-1;
-    }
-    .title{
-        font-size: $font-4;
-    }
-    .subtitle{
-        font-size: $font-2;
-    }
-    .timeline{
-        &__année{
-            font-size: $font-4;
-        }
-    } 
-}
-@media (min-width: 1921px) {
+
+
+@media (max-width: 1921px) {
     body {
         font-size: $font-0;
     }
@@ -232,7 +257,7 @@ body {
 }
 @media (max-width: 1250px) {
     body {
-        font-size: $font--1;
+        font-size: $font--2;
     }
     .title{
         font-size: $font-2;
@@ -242,7 +267,7 @@ body {
     }
     .timeline{
         &__année{
-            font-size: $font-2;
+            font-size: $font-3;
         }
     } 
 }
@@ -265,8 +290,7 @@ body {
 
 @media (max-width: 700px) {
     .timeline{
-        top: auto;
-        bottom: 0;
+        top: clamp(2.5625rem, 1.6712rem + 4.4565vw, 5.125rem);
         margin: 0;
         justify-content: space-evenly;
         flex-flow: row wrap;
@@ -277,7 +301,8 @@ body {
 
         &__switch{
             position: fixed;
-            top: 10%
+            align-self: end;
+            /* margin-bottom: 10px; */
         }
         &__titrexplicatif {
             display: none;

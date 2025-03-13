@@ -182,6 +182,9 @@ var profitDiv = document.querySelector('.ticketingrédient__profit');
 
 var timelineList = document.querySelector('.timeline__btns');
 
+var burgersDiv = document.querySelector('.ticket__miniburgers');
+var initialBurgerDiv = document.querySelector('.ticket__initialburger');
+
 fetch('./assets/data/data.json')
     .then(function(data) {
         return data.json();
@@ -197,6 +200,8 @@ fetch('./assets/data/data.json')
             timelineList.appendChild(timelineItem);
 
             timelineItem.addEventListener('click', function() {
+
+
                 priceDiv.textContent = element.bigmacindex + " $";
                 priceInflationDiv.textContent = element.bigmacindexinflation + " $";
                 medianIncomeDiv.textContent = element.medianincome + "K $";
@@ -241,6 +246,35 @@ fetch('./assets/data/data.json')
                     var profit = element.bigmacindex - element.bigmacprice
                     profitDiv.textContent = profit.toFixed(2) + "$";
                 }
+
+                var basePrice = data[0].bigmacindex;
+                burgersDiv.innerHTML = ""; //ChatGPT
+
+                var relation = element.bigmacindex / basePrice;
+                var imageSize = initialBurgerDiv.clientHeight;
+                console.log(relation);
+
+                for (let i = 0; i < Math.floor(relation); i++) {   
+                    var burger = document.createElement('div');
+                    burger.classList.add('burger');
+                    burger.style.width = imageSize / relation + "px";
+                    burger.style.height = imageSize / relation + "px";
+                    
+                    var burgerImage = document.createElement('img');
+                    burgerImage.src = "./assets/images/bigmac-drawing.png";
+                    burgerImage.alt = "Big Mac";
+                    burgerImage.style.width = "100%";
+                    burger.appendChild(burgerImage);
+
+                    burgersDiv.appendChild(burger);
+                    
+                }
+
+                var burgerCompareDate = document.createElement('p');
+                burgerCompareDate.classList.add('burger__compare');
+                burgerCompareDate.textContent = "1970";
+
+                burgersDiv.appendChild(burgerCompareDate);
             });
 
        });
