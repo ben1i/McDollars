@@ -54,49 +54,53 @@ const modelData = [
 const loader = new GLTFLoader();
 //utilisation de l'Ia pour le chargement groupé
 const loadedModels = [];
-
-function loadModels(url, material, name){
+const meshes = {};
+function loadModels(url, material, name, index = 0){
     loader.load(url, function (gltf){
         const modele = gltf.scene;
+        let meshIndex = 0;
         modele.traverse((child) => {
             if (child.isMesh){
                 child.material = material;
+                meshes[name] = child;
+                group.add(child);
+                meshIndex++; 
+                
             }
         });
 
         loadedModels.push({name: name, model: modele});
         group.add(modele);
-        
-        /*group.children.forEach((modele, index)=> {
-            if (modele.isMesh) {
-                gsap.to(modele.position, {
-                    y: index*2,
-                    duration:1,
-                    repeat:-1
-                })
-            }
-        })*/
+
     })
     
 }
-modelData.forEach((data, index) => {
-    loadModels(data.url, data.material, modelData[index].url.split('/').pop().split('.')[0]);
+modelData.forEach((data) => {
+    const name = data.url.split('/').pop().split('.')[0];
+    loadModels(data.url, data.material, name); // Passer le nom pour l'assignation dans l'objet meshes
 });
-
-
 
 //
 const ingr = document.querySelector('.timeline__switch')
 let bool = true;
 ingr.addEventListener("click", function(){
-  bool = !bool;
-  console.log(bool)
-  if(bool==false){
-    ingr.innerText = "BigMac";
+    bool = !bool;
+    console.log(bool)
+    if(bool==false){
+        ingr.innerText = "BigMac";
+        //animation burger
         gsap.to(camera.position,{
             z: 2,
             duration: 1
         });
+        gsap.to(meshes['topbun'].position,{y:1})
+        gsap.to(meshes['topmeat'].position,{y:1.5})
+        gsap.to(meshes['pickles'].position,{y:0.3})
+        gsap.to(meshes['midbun'].position,{y:0.25})
+        gsap.to(meshes['botmeat'].position,{y:-0.3})
+        gsap.to(meshes['botsalad'].position,{y:-1.2})
+        gsap.to(meshes['cheese'].position,{y:-1.5})
+        gsap.to(meshes['botbun'].position,{y:-1})
         const tl = gsap.timeline();
         tl.to(".ticketingrédient",{
             y : 10,
@@ -117,7 +121,15 @@ ingr.addEventListener("click", function(){
             z: 0,
             duration: 1
         });
-    
+        gsap.to(meshes['topbun'].position,{y:0.1})
+        gsap.to(meshes['topmeat'].position,{y:0.9})
+        gsap.to(meshes['pickles'].position,{y:0.08})
+        gsap.to(meshes['midbun'].position,{y:0.65})
+        gsap.to(meshes['botmeat'].position,{y:0.25})
+        gsap.to(meshes['botsalad'].position,{y:-0.4})
+        gsap.to(meshes['cheese'].position,{y:-0.5})
+        gsap.to(meshes['botbun'].position,{y:0.3})
+
         const tl = gsap.timeline();
         tl.to(".ticket",{
             y : -10,
@@ -133,7 +145,7 @@ ingr.addEventListener("click", function(){
             zIndex:2,
             duration: 0.7
         });
-  }
+    }
 });
 
 function animate() {
@@ -146,8 +158,6 @@ scene.add(group);
 group.position.z = -4
 animate();
 //
-
-
 var currentDate = document.querySelector('.ticket__date')
 
 var priceDiv = document.querySelector('.ticket__price');
