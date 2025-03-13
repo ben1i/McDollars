@@ -98,6 +98,7 @@ body {
 .ticketingrédient{
     transform: rotate(5deg);
     z-index: -1;
+    
 }
 
 .timeline{
@@ -144,11 +145,21 @@ body {
  
              transition: all .1s ease-out;
          }
-        
-        &--notselected{
-            opacity: 50%;
+      
+
+    }  
+        &__switch{
+            font-family: SuperDream;
+            background-color: #82a33e;
+            border: none;
+            height: fit-content;
+            &:hover{
+                cursor: pointer;
+                background-color: $color3;
+                color: #fff8c4;
+                transition: 0.2s;
+            }
         }
-    }
 }
 
 .bg{
