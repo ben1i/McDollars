@@ -158,7 +158,7 @@ scene.add(group);
 group.position.z = -4
 animate();
 //
-var currentDate = document.querySelector('.ticket__date')
+var currentDate = document.querySelectorAll('.ticket__date')
 
 var priceDiv = document.querySelector('.ticket__price');
 var priceInflationDiv = document.querySelector('.ticket__priceInflation');
@@ -192,7 +192,10 @@ fetch('./assets/data/data.json')
                 priceDiv.textContent = element.bigmacindex + " $";
                 priceInflationDiv.textContent = element.bigmacindexinflation + " $";
                 medianIncomeDiv.textContent = element.medianincome + "K $";
-                currentDate.textContent = element.year;
+
+                currentDate.forEach(date => {
+                    date.textContent = element.year;
+                });
 
                 if (!element.bigmacbreadprice) {
                     breadPriceDiv.textContent = "N/A";
@@ -218,13 +221,13 @@ fetch('./assets/data/data.json')
                     cheddarPriceDiv.textContent = element.bigmaccheddarprice + "$";
                 }
 
-                if (!element.bigmacbreadprice) {
-                    breadPriceDiv.textContent = "N/A";
+                if (!element.bigmacbreadprice || !element.bigmacbeefprice ||!element.bigmaccheddarprice || !element.bigmaclettuceprice) {
+                    totalPriceDiv.textContent = "N/A";
                 } else {
                     totalPriceDiv.textContent = element.bigmacprice + "$";
                 }
 
-                if (!element.bigmacbreadprice) {
+                if (!element.bigmacbreadprice || !element.bigmacbeefprice ||!element.bigmaccheddarprice || !element.bigmaclettuceprice) {
                     profitDiv.textContent = "N/A";
                 } else {
                     var profit = element.bigmacindex - element.bigmacprice
