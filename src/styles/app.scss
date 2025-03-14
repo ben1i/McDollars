@@ -307,6 +307,7 @@ h2 {
         flex-flow: column wrap;
         align-items: center;
     }
+
     &__année{
         font-size: $font-4;
         //position: absolute;
@@ -441,11 +442,16 @@ h2 {
         &__switch{
             position: fixed;
             align-self: end;
-            top: auto;
+            top: 14%;
             margin: 0;
-            left: auto;
+            left: 40vw;
             /* margin-bottom: 10px; */
         }
+
+        &__ingredient {
+            display: flex;
+        }
+
         &__titrexplicatif {
             display: none;
         }
