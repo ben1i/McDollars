@@ -4,6 +4,29 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 var section = document.querySelector('.intro');
 
+// Animation transition Accueil -> Expérience
+var btn = document.querySelector('.accueil__button');
+
+btn.addEventListener("click", anim);
+
+function anim() {
+    var accueil = document.querySelector(".accueil");
+    if (accueil) {
+        accueil.style.transition = "transform 0.2s ease-out";
+        accueil.style.transform = "translateY(10px)";
+
+        //Timer pour lancer la 2ème animation à la fin de la 1ère
+        setTimeout(() => {
+            accueil.style.transition = "transform 1s ease-in-out";
+            accueil.style.transform = "translateY(-100%)";
+        }, 200);
+
+        //Timer pour ajouter la class hidden à la fin de la 2ème animation
+        setTimeout(() => {
+            accueil.classList.add("hidden");
+        }, 1000);
+    }
+}
 
 //burger3d
 
