@@ -24,7 +24,7 @@ function anim() {
         //Timer pour ajouter la class hidden à la fin de la 2ème animation
         setTimeout(() => {
             accueil.classList.add("hidden");
-        }, 1000);
+        }, 1000); //ChatGPT pour les 2 timers
     }
 }
 
